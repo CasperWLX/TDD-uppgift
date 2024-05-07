@@ -12,8 +12,7 @@ public class IOHandlerTest
     private IOHandler ioHandler;
 
     private IOHandler testHandler(String dataForScanner){
-        Scanner scanner = new Scanner(dataForScanner);
-        return new IOHandler(scanner);
+        return new IOHandler(new Scanner(dataForScanner));
     }
 
     @DisplayName("Testing has next int")
@@ -23,10 +22,16 @@ public class IOHandlerTest
         assertTrue(ioHandler.hasNextInt());
     }
 
-    @DisplayName("Tests the next string in scanner")
+    @DisplayName("Tests the next string in ioHandler")
     @Test
-    void testNextStringInScanner(){
+    void testNextStringInIOHandler(){
         ioHandler = testHandler("test");
         assertEquals("test", ioHandler.nextLine());
+    }
+
+    @DisplayName("Test the next string in scanner")
+    @Test
+    void testNextStringInScanner() {
+        assertTrue(new Scanner("Test").hasNext());
     }
 }
