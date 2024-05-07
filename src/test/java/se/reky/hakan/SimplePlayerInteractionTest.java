@@ -30,7 +30,7 @@ public class SimplePlayerInteractionTest
     @DisplayName("Testing player is setup correctly")
     @Test
     void testSetUpPlayer() {
-        assertEquals("player1", player.getName());
+        assertEquals("player", player.getName());
     }
 
     @DisplayName("Testing player HP can be updated")

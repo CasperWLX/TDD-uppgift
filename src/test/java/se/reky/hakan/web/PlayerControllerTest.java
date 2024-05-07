@@ -68,7 +68,7 @@ public class PlayerControllerTest {
 
     @DisplayName("Tests if new endpoint works")
     @Test
-    void testNavigationToNewEndpoint(){
+    void testNavigationToNewEndpointAndPlayerIsDisplayed(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
         WebElement firstPlayer = driver.findElement(By.className("player-name"));
