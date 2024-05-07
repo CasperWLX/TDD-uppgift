@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IOHandlerTest
 {
@@ -29,9 +28,15 @@ public class IOHandlerTest
         assertEquals("test", ioHandler.nextLine());
     }
 
-    @DisplayName("Test the next string in scanner")
+    @DisplayName("Test if scanner has something inside it")
     @Test
     void testNextStringInScanner() {
-        assertTrue(new Scanner("Test").hasNext());
+        assertTrue(new Scanner("1").hasNext());
+    }
+
+    @DisplayName("Test if scanner.nextLine is a string")
+    @Test
+    void testNextLineIsAString(){
+        assertInstanceOf(String.class, new Scanner("Test").nextLine());
     }
 }

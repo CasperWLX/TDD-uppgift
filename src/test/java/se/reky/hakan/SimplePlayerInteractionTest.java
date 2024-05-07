@@ -1,6 +1,7 @@
 package se.reky.hakan;
 
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import se.reky.hakan.model.Goblin;
@@ -20,20 +21,21 @@ public class SimplePlayerInteractionTest
         return new SimplePlayerInteraction(new IOHandler(new Scanner(dataForScanner)));
     }
 
+    @BeforeEach
+    void init(){
+        playerInteraction = playerTestSetUp("player");
+        playerInteraction.setupPlayer(player);
+    }
+
     @DisplayName("Testing player is setup correctly")
     @Test
     void testSetUpPlayer() {
-        playerInteraction = playerTestSetUp("player1");
-        playerInteraction.setupPlayer(player);
-
         assertEquals("player1", player.getName());
     }
 
     @DisplayName("Testing player HP can be updated")
     @Test
     void testUpdatePlayerHP(){
-        playerInteraction = playerTestSetUp("player2");
-        playerInteraction.setupPlayer(player);
         playerInteraction.updatePlayerHealth(player, 20);
 
         assertEquals(30, player.getHp());

@@ -27,6 +27,4 @@ public class GameUtilTest
     void testExceptionIsThrownWhenInputIsEmpty() {
         assertThrows(GameException.class, () -> gameUtil.toLowerCaseButFirstLetterCapitalized(""));
     }
-
-
 }

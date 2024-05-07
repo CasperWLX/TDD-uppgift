@@ -26,6 +26,7 @@ public class PlayerControllerTest {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
+        driver.get("http://localhost:8080/players");
     }
 
     @AfterEach
@@ -38,8 +39,6 @@ public class PlayerControllerTest {
     @DisplayName("Testing 2 players shown")
     @Test
     void correctAmountOfPlayersAreShown(){
-        driver.get("http://localhost:8080/players");
-
         List<WebElement> listOfPlayers = driver.findElements(By.tagName("li"));
 
         assertEquals(2, listOfPlayers.size());
@@ -48,7 +47,6 @@ public class PlayerControllerTest {
     @DisplayName("Tests if first player name is displayed")
     @Test
     void firstPlayerNameIsDisplayed(){
-        driver.get("http://localhost:8080/players");
         WebElement firstElement = driver.findElement(By.className("player-name"));
 
         assertTrue(firstElement.isDisplayed());
@@ -57,15 +55,12 @@ public class PlayerControllerTest {
     @DisplayName("Tests if website title is correct")
     @Test
     void testWebsiteTitleIsCorrect(){
-        driver.get("http://localhost:8080/players");
-
         assertEquals("Players List", driver.getTitle());
     }
 
     @DisplayName("Tests if button has correct text")
     @Test
     void testButtonHasCorrectText(){
-        driver.get("http://localhost:8080/players");
         WebElement button = driver.findElement(By.tagName("button"));
 
         assertEquals("Logga in", button.getText());
@@ -75,7 +70,6 @@ public class PlayerControllerTest {
     @Test
     void testNavigationToNewEndpoint(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        driver.get("http://localhost:8080/players");
 
         WebElement firstPlayer = driver.findElement(By.className("player-name"));
 
