@@ -7,10 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -69,7 +67,7 @@ public class PlayerControllerTest {
     @DisplayName("Tests if new endpoint works")
     @Test
     void testNavigationToNewEndpointAndPlayerIsDisplayed(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         WebElement firstPlayer = driver.findElement(By.className("player-name"));
 

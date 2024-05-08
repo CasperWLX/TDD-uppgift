@@ -1,10 +1,8 @@
 package se.reky.hakan;
 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import se.reky.hakan.model.Goblin;
 import se.reky.hakan.model.Player;
 
 import java.util.Scanner;
